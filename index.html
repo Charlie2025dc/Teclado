@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Reconocimiento de voz HTML5</title>
+<script type="text/javascript" src="http://code.jquery-latest.js"></script>
+<script>
+	if (document.createElement("input").webkitSpeech === undefined) {
+		document.write("Lo siento pero tu navegador no es compatible.</p>");
+	}
+	function mostrar() {
+		var value = $("#mivoz").val();
+		$("span.var").text(value);
+	}
+</script>
+</head>
+
+<body>
+<div>
+	<h1> Reconocimiento de Voz HTML5 </h1> 
+    <form>
+    	<input nombre="mivoz" id="mivoz" type="text" x-webkit-speech speech error onwebkitspeechchange="mostrar();" />
+    </form>
+    <p> Has Dicho"<span class="var"></span>".</p>
+    </div>
+</body>
+</html>
